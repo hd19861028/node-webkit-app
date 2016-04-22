@@ -1,0 +1,17 @@
+{
+	"name": "node-webkit-app",
+	"version": "1.0.0",
+	"description": "it's a desktop app. It's developed by node.js.",
+	"repository": {
+		"url": "https://github.com/hd19861028/node-webkit-app.git"
+	},
+	"main": "",
+	"author": {
+		"email": "282642547@qq.com",
+		"name": "Mars Hu"
+	},
+	"keywords": [
+		"node-webkit"
+	],
+	"license": "MIT"
+}

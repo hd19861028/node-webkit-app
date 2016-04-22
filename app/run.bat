@@ -9,7 +9,7 @@ cd app
 
 start cmd /c "%CuttentPath%grunt build"
 ping -n 3 127.1>nul
-cd ..
+cd ../build
 copy /b nw.exe+app.zip app.exe
 ping -n 3 127.1>nul
 echo "starting... please waitting!"

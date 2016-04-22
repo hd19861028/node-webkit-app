@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 		compress: {
 			main: {
 				options: {
-					archive: '../app.zip'
+					archive: '../build/app.zip'
 				},
 				files: [{
 					src: ['index.html', 'logo.png', 'package.json', 'api.js'],
