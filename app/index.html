@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>将javascript进行到底</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/menu.js"></script>
+		<script>
+			var notification = new window.Notification('程序已启动', {
+				body: '欢迎使用胡锦柢制作的exe',
+				icon: 'logo.png',
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<h1>本应用包含的功能</h1>
+		<table class="table">
+			<tr>
+				<td rowspan="3" width="15%" align="center">工具</td>
+				<td><a href="page/system/sendrequest.html" title="发起web请求">发送请求</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/system/qrimage.html" title="根据指定的字符串，生成一张二维码图片">生成二维码</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/system/timespan.html" title="日期与时间戳之间的相互转换">时间戳转换</a></td>
+			</tr>
+			<tr>
+				<td rowspan="2" width="15%" align="center">微信</td>
+				<td><a href="page/weixin/set_customer_logo.html" title="为指定的客服设置头像，头像尺寸640*640">设置客服头像</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/weixin/set_weixin_menu.html" title="为公众号设置菜单">设置微信菜单</a></td>
+			</tr>
+			<tr>
+				<td rowspan="4" width="15%" align="center">编码</td>
+				<td><a href="page/encoding/url.html" title="将url编码或者解码">URL</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/encoding/utf8.html">UTF8</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/encoding/html-encode.html">HTML</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/encoding/base64.html">Base64</a></td>
+			</tr>
+			<tr>
+				<td rowspan="3" width="15%" align="center">加密</td>
+				<td><a href="page/secret/ase.html" title="对称加密的实现">ASE</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/secret/secret.html" title="2种不可逆加密方式">MD5 | SHA1</a></td>
+			</tr>
+			<tr>
+				<td><a href="page/secret/salt.html" title="根据随机盐值，对指定的字符串进行加密">盐值</a></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<br>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

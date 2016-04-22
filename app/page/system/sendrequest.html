@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>发送请求</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<script src="../../js/menu.js"></script>
+		<script type="text/javascript" src="../../lib/common.js"></script>
+		<script>
+			function send() {
+				var url = document.getElementById("url").value;
+				var p = document.getElementById("param").value;
+				var ispost = document.getElementById("method1").checked ? true : false;
+				try {
+					if (ispost) {
+						WebRequest.Post(url, p)
+							.then(function(msg) {
+								document.getElementById('result').innerText = msg;
+							}, function(err){
+								document.getElementById('result').innerText = err.stack;
+							})
+					}
+				} catch (e) {
+					document.getElementById('result').innerText = e.stack;
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<table width="100%">
+			<tr>
+				<td width="10%" align="center">url</td>
+				<td width="90%">
+					<textarea id="url" cols="120" rows="4"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">参数</td>
+				<td>
+					<textarea id="param" cols="90" rows="20"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">方式</td>
+				<td>
+					<input type="radio" name="method" value="post" id="method1" checked="checked" />
+					<label for="method1">post</label>
+					<input type="radio" name="method" value="get" id="method2" />
+					<label for="method2">get</label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button onclick="send()" style="margin-left: 300px;">提交</button>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div id="result" style="width: 100%;"></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

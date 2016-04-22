@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>修改指定客服头像</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<script type="text/javascript" src="../../lib/jquery.js"></script>
+		<script type="text/javascript" src="../../lib/common.js"></script>
+		<script src="../../js/menu.js"></script>
+	</head>
+
+	<body>
+		<div id="step1">
+			<h1>第一步：设置客服账号</h1>
+			<table>
+				<tr style="display: none;">
+					<td>token：</td>
+					<td>
+						<input id="token" />
+					</td>
+				</tr>
+				<tr>
+					<td>客服账号：</td>
+					<td>
+						<input id="account" />@lhyl360</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button onclick="prepare()">确定</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="step2" style="display: none;">
+			<h1>第二步：选择客服头像</h1>
+			<h5>提交后，如看到<font style="color:red">{ "errcode": 0, "errmsg": "no error" }</font>，则修改头像成功</h5>
+			<form action='' method="post" enctype="multipart/form-data" id="form1">
+				<input type="file" name="media" />
+				<input type="hidden" name="kf_account" />
+				<input type="submit" value="提交" />
+			</form>
+		</div>
+
+	</body>
+
+	<script>
+		function prepare() {
+			var token = $('#token').val();
+			var account = $('#account').val() + "@lhyl360";
+			$('input[name=kf_account]').val(account)
+			var form1 = $('#form1');
+			var url = "http://api.weixin.qq.com/customservice/kfaccount/uploadheadimg?access_token=TOKEN&kf_account=ACCOUNT";
+			url = url.replace(/TOKEN/, token).replace(/ACCOUNT/, account);
+			$(form1).attr('action', url);
+			$("#step1").hide()
+			$("#step2").show()
+		}
+		$(function() {
+			Get(
+				"http://www.zhbosdoctor.com/wxapi/common/access_token",
+				null,
+				function(data) {
+					$('#token').val(data.token);
+				},
+				function() {
+					alert('获取access_token出错，可能是node.js服务器挂掉了')
+				})
+		})
+	</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>设置微信公众号的菜单</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link rel="stylesheet" href="../../css/main.css" />
+		<script type="text/javascript" src="../../lib/jquery.js"></script>
+		<script type="text/javascript" src="../../lib/common.js"></script>
+		<script src="../../js/menu.js"></script>
+	</head>
+
+	<body>
+		<textarea rows="30" style="width: 100%;" id="menu"></textarea>
+		<br>
+		<button onclick="submit()" style="display: none;" id="submit">确定</button>
+		<br>
+		<div id="result" style="width: 100%;"></div>
+	</body>
+
+	<script>
+		var url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token=';
+		$(function() {
+			$("#menu").val(read('menu.txt'))
+			Get(
+				"http://www.zhbosdoctor.com/wxapi/common/access_token",
+				null,
+				function(data) {
+					$("#submit").show();
+					url += data.token;
+				},
+				function() {
+					alert('获取access_token出错，可能是node.js服务器挂掉了')
+				})
+		})
+
+		function submit() {
+			var menu = $("#menu").val()
+			try {
+				var param = JSON.stringify(JSON.parse(menu));
+				write('menu.txt', menu);
+				WebRequest.Post(url, menu)
+					.then(function(msg) {
+						document.getElementById('result').innerText = msg;
+					}, function(err) {
+						alert(err.stack)
+					})
+			} catch (e) {
+				alert(e.stack)
+			}
+		}
+	</script>
+
+</html>
