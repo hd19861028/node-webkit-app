@@ -89,6 +89,15 @@ secret.append(new gui.MenuItem({
 	}
 }));
 
+var func = new gui.Menu();
+func.append(new gui.MenuItem({
+	label: '全屏',
+	click: function() {
+		win.enterFullscreen();
+		win.menu = null;
+	}
+}));
+
 menu.append(new gui.MenuItem({
 	label: '首页',
 	click: function() {
@@ -111,6 +120,11 @@ menu.append(new gui.MenuItem({
 	label: '加密',
 	submenu: secret
 }));
+menu.append(new gui.MenuItem({
+	label: '功能',
+	submenu: func
+}));
+
 
 win.menu = menu;
 
