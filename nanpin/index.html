@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/application.js" ></script>
+	</head>
+
+	<body>
+		<div style="width: 100%;" id="nav">
+			<nav>
+				<ul am-repeat="info.menus">
+					<li class="{{classname}}">
+						<img am-src="img/1-{{id}}.png" index="{{id}}" />
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+
+</html>

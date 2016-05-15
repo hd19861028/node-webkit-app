@@ -1,0 +1,499 @@
+.clear {
+	clear: both;
+}
+
+body {
+	background-image: url(../img/bg.jpg);
+	width: 1920px;
+	height: 1080px;
+}
+
+nav {
+	margin: 0 auto;
+	padding-top: 270px;
+	margin-left: 200px;
+}
+
+nav ul {
+	width: 100%;
+	position: relative;
+}
+
+nav ul li {
+	list-style: none;
+	float: left;
+	width: 320px;
+	height: 543px;
+	margin-right: 40px;
+	position: relative;
+}
+
+nav ul li img {
+	width: 100%;
+	max-width: 320px;
+	position: absolute;
+	bottom: 0;
+}
+
+.left1 {
+	animation-duration: .1s;
+	animation-name: animate-left1;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-left1 {
+	from {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+		margin-left: 0;
+	}
+	to {
+		width: 128px;
+		height: 444px;
+		opacity: 0.4;
+		margin-left: -176px;
+	}
+}
+
+.left2 {
+	animation-duration: .1s;
+	animation-name: animate-left2;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-left2 {
+	from {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+	to {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+	}
+}
+
+.left3 {
+	animation-duration: .1s;
+	animation-name: animate-left3;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-left3 {
+	from {
+		width: 320px;
+		height: 543px;
+		opacity: 1;
+	}
+	to {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+}
+
+.left4 {
+	animation-duration: .1s;
+	animation-name: animate-left4;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-left4 {
+	from {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+	to {
+		width: 320px;
+		height: 543px;
+		opacity: 1;
+	}
+}
+
+.left5 {
+	animation-duration: .1s;
+	animation-name: animate-left5;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-left5 {
+	from {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+	}
+	to {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+}
+
+.left6 {
+	animation-duration: .1s;
+	animation-name: animate-left6;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-left6 {
+	from {
+		width: 128px;
+		height: 444px;
+		opacity: 0.4;
+	}
+	to {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+	}
+}
+
+.right1 {
+	animation-duration: .1s;
+	animation-name: animate-right1;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-right1 {
+	from {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+		margin-left: 0;
+	}
+	to {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+		margin-left: 230px;
+	}
+}
+
+.right2 {
+	animation-duration: .1s;
+	animation-name: animate-right2;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-right2 {
+	from {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+	to {
+		width: 320px;
+		height: 543px;
+		opacity: 1;
+	}
+}
+
+.right3 {
+	animation-duration: .1s;
+	animation-name: animate-right3;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-right3 {
+	from {
+		width: 320px;
+		height: 543px;
+		opacity: 1;
+	}
+	to {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+}
+
+.right4 {
+	animation-duration: .1s;
+	animation-name: animate-right4;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-right4 {
+	from {
+		width: 256px;
+		height: 508px;
+		opacity: 0.8;
+	}
+	to {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+	}
+}
+
+.right5 {
+	animation-duration: .1s;
+	animation-name: animate-right5;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-right5 {
+	from {
+		width: 192px;
+		height: 474px;
+		opacity: 0.6;
+	}
+	to {
+		width: 128px;
+		height: 444px;
+		opacity: 0.4;
+	}
+}
+
+.right6 {
+	animation-duration: .1s;
+	animation-name: animate-right6;
+	animation-timing-function: ease;
+}
+
+@keyframes animate-right6 {
+	from {
+		width: 128px;
+		height: 444px;
+		opacity: 0.4;
+	}
+	to {
+		width: 64px;
+		height: 415px;
+		opacity: 0.2;
+	}
+}
+
+nav ul li.level1 {
+	transform: scale(1);
+}
+
+nav ul li.level2 {
+	width: 256px;
+	height: 508px;
+	opacity: 0.8;
+}
+
+nav ul li.level3 {
+	width: 192px;
+	height: 474px;
+	opacity: 0.6;
+}
+
+nav ul li.level4 {
+	width: 128px;
+	height: 444px;
+	opacity: 0.4;
+}
+
+nav ul li.level5 {
+	width: 64px;
+	height: 415px;
+	opacity: 0.2;
+}
+
+nav ul li.level6 {
+	display: none;
+}
+
+nav.item2 {
+	margin-left: 0;
+}
+
+nav.item3 {
+	margin-left: 0;
+}
+
+nav.item4 {
+	margin-left: 0;
+}
+
+nav.item2 ul {
+	width: 80%;
+	margin: 0 auto;
+}
+
+nav.item3 ul {
+	width: 80%;
+	margin: 0 auto;
+}
+
+nav.item4 ul {
+	width: 80%;
+	margin: 0 auto;
+}
+
+nav.item2 ul li {
+	width: 50%;
+	text-align: center;
+	margin-right: 0;
+}
+
+nav.item3 ul li {
+	width: 33%;
+	text-align: center;
+	margin-right: 0;
+}
+
+nav.item4 ul li {
+	width: 25%;
+	text-align: center;
+	margin-right: 0;
+}
+
+nav.item2 ul li img {
+	width: 320px;
+	height: 543px;
+	position: static;
+}
+
+nav.item3 ul li img {
+	width: 320px;
+	height: 543px;
+	position: static;
+}
+
+nav.item4 ul li img {
+	width: 320px;
+	height: 543px;
+	position: static;
+}
+
+footer {
+	position: fixed;
+	bottom: 30px;
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+
+footer img {
+	width: 200px;
+}
+
+footer img:nth-child(2){
+	margin-left: 100px;
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+header {
+	width: 84%;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 56px;
+}
+
+header + ul.list {
+	width: 84%;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 23px;
+	padding-top: 15px;
+}
+
+ul.list li {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+	line-height: 2em;
+}
+
+ul.list li:nth-child(2n) {
+	margin-right: 0;
+	margin-left: 2%;
+}
+
+ul.list li>span {
+	width: 487px;
+	float: left;
+	opacity: 0.8;
+}
+
+ul.list li>span:first-child {
+	width: 25px;
+	opacity: 1;
+	padding: 5px 10px 5px 0px;
+}
+
+ul.list li>span:last-child {
+	width: 230px;
+	margin-left: 22px;
+	opacity: 0.8;
+}
+
+p.nodata {
+	font-size: 36px;
+	opacity: 0.8;
+}
+
+.model {
+	width: 84%;
+    height: 70%;
+    border-radius: 5px;
+    background-color: rgba(147, 183, 223, 0.95);
+    position: fixed;
+    top: 150px;
+    left: 150px;
+}
+
+.model table tr td{
+	position: relative;
+}
+
+.model .logo {
+	position: absolute;
+	top: 60px;
+	left: 60px;
+	width: 636px;
+	height: 636px;
+}
+
+.model .delete{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 45px;
+	height: 45px;
+}
+
+.model .title{
+	font-size: 36px;
+	position: absolute;
+	top: 44px;
+}
+
+.model .title span{
+	padding-right: 30px;
+}
+
+.model .title small{
+	font-size: 24px;
+}
+
+.model .content{
+	position: absolute;
+	top: 120px;
+	font-size: 24px;
+	width: 90%;
+	height: 560px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.model .content p{
+	margin-bottom: 1em;
+}
+
+.model .content p.footer{
+	text-align: right;
+}
