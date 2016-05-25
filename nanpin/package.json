@@ -15,7 +15,7 @@
 		"frame": true,
 		"width": 1200,
 		"height": 800,
-		"resizable": false,
+		"resizable": true,
 		"min_width": 800,
 		"min_height": 600,
 		"max_width": 1920,
