@@ -9,19 +9,11 @@ $(function() {
 			var m = data[i - 1].m;
 			var c = data[i - 1].c;
 			if (item == 5) {
-				if (i == 3) {
-					html += '<li><img src="img/2-' + item + '-' + i + '.png" style="position: absolute;width: 458px; bottom: 30px;left: 11px; max-width: 1000px; height: auto;" m="' + m+ '" c="' + c + '" /></li>'
-				} else {
-					html += '<li><img src="img/2-' + item + '-' + i + '.png" m="' + m+ '" c="' + c + '" /></li>'
-				}
+				html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
 			} else if (item == 1) {
-				if (i == 3) {
-					html += '<li><img src="img/2-' + item + '-' + i + '.png" style="position: absolute;left: 10px;max-width: 1000px;width: 366px;bottom: 11px;height: 534px;" m="' + m+ '" c="' + c + '" /></li>'
-				} else {
-					html += '<li><img src="img/2-' + item + '-' + i + '.png" m="' + m+ '" c="' + c + '" /></li>'
-				}
+				html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
 			} else {
-				html += '<li><img src="img/2-' + item + '-' + i + '.png" m="' + m+ '" c="' + c + '" /></li>'
+				html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
 			}
 		}
 		$('nav ul').html(html)
