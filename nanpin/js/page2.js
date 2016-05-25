@@ -8,13 +8,7 @@ $(function() {
 		for (var i = 1; i <= length; i++) {
 			var m = data[i - 1].m;
 			var c = data[i - 1].c;
-			if (item == 5) {
-				html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
-			} else if (item == 1) {
-				html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
-			} else {
-				html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
-			}
+			html += '<li><img src="img/2-' + item + '-' + c + '.png" m="' + m+ '" c="' + c + '" /></li>'
 		}
 		$('nav ul').html(html)
 		$('nav').addClass('item' + length)
