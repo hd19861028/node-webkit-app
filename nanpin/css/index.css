@@ -478,6 +478,7 @@ p.nodata {
 
 .model .title small{
 	font-size: 24px;
+	display: none;
 }
 
 .model .content{
