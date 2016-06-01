@@ -62,7 +62,10 @@ Ajax(server + 'api/menu', null, 'get', 'json', function(data) {
 			function() {
 				scale(false)
 			})
-
+		$('.close').on('click', function(e) {
+			e.stopPropagation()
+			$('.frame').hide();
+		});
 		$('.level1').click(function(e) {
 			e.stopPropagation()
 			var img = $(this).find("img");
@@ -70,6 +73,9 @@ Ajax(server + 'api/menu', null, 'get', 'json', function(data) {
 			WebStorage.Session.Set('item', i);
 			if (i < 6)
 				window.location.href = 'page2.html';
+			else {
+				$('.frame').show();
+			}
 		})
 	})
 })
