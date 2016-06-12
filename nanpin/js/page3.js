@@ -61,39 +61,49 @@ function ShowItem(index) {
 	Ajax(server + 'api/news/detail', {
 		id: id
 	}, 'get', 'json', function(r) {
-		var isNeedLoop = false;
-		var img = server + 'api/news/image/' + r.image;
-		var i1 = $('.logo').get(0);
-		$(i1).attr('src', img);
-		if (r.image1) {
-			var img1 = server + 'api/news/image/' + r.image1;
-			var i2 = $('.logo').get(1);
-			$(i2).attr('src', img1);
-			isNeedLoop = true;
-			loopTotal += 1;
+		if (r.title) {
+			$('.title').show()
+			var isNeedLoop = false;
+			var img = server + 'api/news/image/' + r.image;
+			var i1 = $('.logo').get(0);
+			$(i1).attr('src', img);
+			if (r.image1) {
+				var img1 = server + 'api/news/image/' + r.image1;
+				var i2 = $('.logo').get(1);
+				$(i2).attr('src', img1);
+				isNeedLoop = true;
+				loopTotal += 1;
+			}
+			if (r.image2) {
+				var img2 = server + 'api/news/image/' + r.image2;
+				var i3 = $('.logo').get(2);
+				$(i3).attr('src', img2);
+				isNeedLoop = true;
+				loopTotal += 1;
+			}
+			$('.title span').html(r.title);
+			$('.title small').html(r.updatetime);
+			$('.content').html(r.content + '<p class="footer">' + r.footer + '</p>');
+			if (isNeedLoop) {
+				timer = setInterval(function() {
+					if (loopIndex < loopTotal - 1) {
+						loopIndex += 1;
+					} else {
+						loopIndex = 0;
+					}
+					$('.logo').hide();
+					var showLog = $('.logo').get(loopIndex);
+					$(showLog).show()
+				}, 5000)
+			}
+		} else {
+			var img = server + 'api/news/image/' + r.image;
+			var i1 = $('.logo').get(0);
+			$(i1).attr('src', img);
+			$(i1).css('width', 1485);
+			$('.title').hide()
 		}
-		if (r.image2) {
-			var img2 = server + 'api/news/image/' + r.image2;
-			var i3 = $('.logo').get(2);
-			$(i3).attr('src', img2);
-			isNeedLoop = true;
-			loopTotal += 1;
-		}
-		$('.title span').html(r.title);
-		$('.title small').html(r.updatetime);
-		$('.content').html(r.content + '<p class="footer">' + r.footer + '</p>');
-		if (isNeedLoop) {
-			timer = setInterval(function() {
-				if (loopIndex < loopTotal - 1) {
-					loopIndex += 1;
-				} else {
-					loopIndex = 0;
-				}
-				$('.logo').hide();
-				var showLog = $('.logo').get(loopIndex);
-				$(showLog).show()
-			}, 5000)
-		}
+
 		$('.model').show();
 	})
 	current = index;
