@@ -11,9 +11,9 @@
 	</head>
 
 	<body>
-		<div style="width: 100%; padding-top: 160px;">
+		<div style="width: 100%; padding-top: 160px; visibility: hidden;">
 			<header></header>
-			<ul class="list" am-repeat="info.rows" id="list">
+			<ul class="list" am-repeat="info.rows">
 				<li id="{{id}}">
 					<span><img src="img/point.png" width="25" /></span>
 					<span class="ellipsis">{{title}}</span>
@@ -22,11 +22,13 @@
 			</ul>
 		</div>
 		<div class="clear"></div>
-		<div class="model" style="display: none;">
+		<div class="model" style="display: none;" id="list">
 			<table width="100%">
 				<tr>
 					<td width="756">
 						<img class="logo" />
+						<img class="logo" style="display: none;" />
+						<img class="logo" style="display: none;" />
 					</td>
 					<td>
 						<div class="title">
@@ -40,7 +42,7 @@
 					</td>
 				</tr>
 			</table>
-			<img src="img/close.png" class="delete" />
+			<img src="img/close.png" class="delete" style="display: none;" />
 		</div>
 		<footer>
 			<img src="img/last.png" class="last" />
