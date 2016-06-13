@@ -458,6 +458,20 @@ p.nodata {
 	height: 636px;
 }
 
+.model .logotitle {
+	position: absolute;
+	top: 554px;
+	left: 110px;
+	width: 636px;
+	height: 4em;
+	display: block;
+	text-align: center;
+	font-size: 3em;
+	line-height: 4em;
+	color: #FFFFFF;
+}
+
+
 .model .delete {
 	position: absolute;
 	right: 10px;

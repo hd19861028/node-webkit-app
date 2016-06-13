@@ -62,6 +62,9 @@ function ShowItem(index) {
 		id: id
 	}, 'get', 'json', function(r) {
 		if (r.title) {
+			$('.logo').css('top', 60)
+			$('.logo').css('left', 60)
+			$('.logo').css('height', 636)
 			$('.title').show()
 			var isNeedLoop = false;
 			var img = server + 'api/news/image/' + r.image;
@@ -97,11 +100,47 @@ function ShowItem(index) {
 				}, 5000)
 			}
 		} else {
-			var img = server + 'api/news/image/' + r.image;
-			var i1 = $('.logo').get(0);
-			$(i1).attr('src', img);
-			$(i1).css('width', 1485);
 			$('.title').hide()
+			if (r.footer) {
+				$('.logo').css('top', 110)
+				$('.logo').css('left', 110)
+				var foots = [];
+				if (r.footer.indexOf(',') >= 0) {
+					foots = r.footer.split(',')
+				} else {
+					foots = r.footer.split('，')
+				}
+				var img = server + 'api/news/image/' + r.image;
+				var i1 = $('.logo').get(0);
+				$(i1).attr('src', img);
+				$(i1).css('height', 424);
+				var title1 = $('.logotitle').get(0);
+				$(title1).html(foots[0]);
+				$(title1).show()
+				var img1 = server + 'api/news/image/' + r.image1;
+				var i2 = $('.logo').get(1);
+				var title2 = $('.logotitle').get(1);
+				if (foots[1]) {
+					$(i2).attr('src', img1);
+					$(i2).css('left', 864);
+					$(i2).css('height', 424);
+					$(i2).show()
+					$(title2).css('left', 864);
+					$(title2).html(foots[1]);
+					$(title2).show()
+				}else{
+					$(i2).hide()
+					$(title2).hide()
+				}
+			} else {
+				$('.logo').css('top', 60)
+				$('.logo').css('left', 60)
+				$('.logo').css('height', 636)
+				var img = server + 'api/news/image/' + r.image;
+				var i1 = $('.logo').get(0);
+				$(i1).attr('src', img);
+				$(i1).css('width', 1485);
+			}
 		}
 
 		$('.model').show();
