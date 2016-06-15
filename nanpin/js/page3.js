@@ -1,4 +1,3 @@
-var ang = new angular();
 var info = {};
 var newsType = 0;
 var pageIndex = 1;
@@ -27,37 +26,61 @@ function NewsList(isnext) {
 		}
 	}
 	if (isload || maxIndex == 0) {
-		Ajax(server + 'api/news', {
-			id: newsType,
-			index: maxIndex == 0 ? 1 : pageIndex,
-			size: 2000
-		}, 'get', 'json', function(r) {
-			info.rows = r.rows;
-			info.total = r.total;
-			for (var i = 0; i < info.rows.length; i++) {
-				ids.push(info.rows[i].id);
-			}
-			total = r.total;
-			ShowItem(current)
-			swipt('list',
-				function() {
-					if (current < total) {
-						current += 1;
-						ShowItem(current)
-					}
-				},
-				function() {
-					if (current > 0) {
-						current -= 1;
-						ShowItem(current)
-					}
+		if (newsType == 9) {
+			Ajax(server + 'api/news/type', {
+				type: newsType
+			}, 'get', 'json', function(r) {
+				$('.block').show()
+				var result = '';
+				var temp = '<td><span>{name}</span><img src="' + server + 'api/news/image/{img}" id={id} /></td>'
+				for (var i = 0; i < r.length; i++) {
+					result += temp.replace(/\{name\}/, r[i].footer)
+						.replace(/\{img\}/, r[i].image)
+						.replace(/\{id\}/, r[i].id)
+				}
+				$('.block tr').html(result);
+				$('.block img').each(function() {
+					$(this).click(function() {
+						var id = $(this).attr('id');
+						ShowItem(null, id)
+					})
 				})
-		})
+			})
+		} else {
+			Ajax(server + 'api/news', {
+				id: newsType,
+				index: maxIndex == 0 ? 1 : pageIndex,
+				size: 2000
+			}, 'get', 'json', function(r) {
+				info.rows = r.rows;
+				info.total = r.total;
+				for (var i = 0; i < info.rows.length; i++) {
+					ids.push(info.rows[i].id);
+				}
+				total = r.total;
+				ShowItem(current)
+				swipt('list',
+					function() {
+						if (current < total) {
+							current += 1;
+							ShowItem(current)
+						}
+					},
+					function() {
+						if (current > 0) {
+							current -= 1;
+							ShowItem(current)
+						}
+					})
+			})
+		}
 	}
 }
 
-function ShowItem(index) {
-	var id = ids[index];
+function ShowItem(index, id) {
+	if(id) $('.delete').show()
+	else $('.delete').hide()
+	id = id ? id : ids[index];
 	Ajax(server + 'api/news/detail', {
 		id: id
 	}, 'get', 'json', function(r) {
@@ -128,7 +151,7 @@ function ShowItem(index) {
 					$(title2).css('left', 864);
 					$(title2).html(foots[1]);
 					$(title2).show()
-				}else{
+				} else {
 					$(i2).hide()
 					$(title2).hide()
 				}
@@ -155,6 +178,10 @@ Ajax(server + 'api/menu', {
 	$('header').html(data[0].name)
 	newsType = data[0].id;
 	NewsList(true);
+})
+
+$('.delete').click(function(){
+	$('.model').hide()
 })
 
 $('.home').click(function() {
