@@ -78,6 +78,10 @@ Ajax(server + 'api/menu', null, 'get', 'json', function(data) {
 			}
 		})
 	})
+}, function() {
+	setTimeout(function() {
+		window.location.reload();
+	}, 10000);
 })
 
 $('body').click(function() {
