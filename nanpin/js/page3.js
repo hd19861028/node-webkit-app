@@ -58,7 +58,7 @@ function NewsList(isnext) {
 					ids.push(info.rows[i].id);
 				}
 				total = r.total;
-				ShowItem(current)
+				ShowItem(current);
 				swipt('list',
 					function() {
 						if (current < total) {
@@ -78,7 +78,8 @@ function NewsList(isnext) {
 }
 
 function ShowItem(index, id) {
-	if(id) $('.delete').show()
+	console.log(current, total)
+	if (id) $('.delete').show()
 	else $('.delete').hide()
 	id = id ? id : ids[index];
 	Ajax(server + 'api/news/detail', {
@@ -168,7 +169,6 @@ function ShowItem(index, id) {
 
 		$('.model').show();
 	})
-	current = index;
 }
 
 Ajax(server + 'api/menu', {
@@ -180,7 +180,7 @@ Ajax(server + 'api/menu', {
 	NewsList(true);
 })
 
-$('.delete').click(function(){
+$('.delete').click(function() {
 	$('.model').hide()
 })
 
@@ -192,9 +192,22 @@ $('.last').click(function() {
 	window.location.href = "page2.html"
 })
 
-$('body').click(function() {
-	if (current < total - 1) {
-		current += 1;
-		ShowItem(current)
+$('body').click(function(e) {
+	/*
+	var x = e.clientX;
+	var t = $('body').width() / 2;
+	var isnext = x > t ? true : false;
+	
+	if (isnext) {
+		if (current < total - 1) {
+			current += 1;
+			ShowItem(current)
+		}
+	} else {
+		if (current > 0) {
+			current -= 1;
+			ShowItem(current)
+		}
 	}
+	/**/
 })

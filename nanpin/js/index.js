@@ -85,5 +85,5 @@ Ajax(server + 'api/menu', null, 'get', 'json', function(data) {
 })
 
 $('body').click(function() {
-	scale(false);
+	//scale(false);
 })
